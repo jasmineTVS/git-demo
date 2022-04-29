@@ -1,0 +1,93 @@
+GIT Course:
+===========
+Initial commands:
+-----------------
+	> git init
+	> git config --global user.email "dailycodebread@gmail.com"
+	> git config --global user.name "jasmineTvs"
+	
+1. check the path of current working directory
+	> pwd
+	
+2. create working directory
+	> mkdir GIT_POC
+	> cd C:/Work/GIT_POC
+
+3 check the directory
+	> ls GIT_POC (no files shown, as it is empty)
+
+4. create README.md file inside the directory and add the file into staging area
+	> git add README.md
+
+5. Check the status before & after committing the file
+	> git status
+	> git commit -m "first commit"
+	> git status
+
+6. Undo the last modified changes on the file before committing
+	> git restore <file name>
+
+7 Add multiple files into the staging area at a time
+	> git add .
+
+8. Display the history of the last committed files
+	> git log
+
+9. Unstage the committed file
+	> git reset HEAD <file-name>
+	
+10.Use -a parameter with the git commit command to directly commit newly modified tracked files
+	> git commit -am "New changes"
+	
+11. To back out any changes made to the specified file and replace it with the version last committed in GIT
+	> git checkout -- <file-name>
+	
+12. Remove committed file
+	> notepad debug.log (add contents)
+	> git ls (displayed debug.log file along with other files)
+	> git status (uncommitted file)
+	> git add debug.log (added into the staging area)
+	> git commit -m "added log file"
+	> git log (check history)
+	> git rm debug.log (removing committed file using GIT, but still available in staging area)
+	> git commit -m "removing log file"
+	> rm info.log (Removing file using terminal : without knowing git)
+	> git add .
+	> git commit -m "removing log file"
+
+13. Moving files
+	> ls
+	> mkdir web
+	> cd web
+	> git mv index.html web
+	> ll
+	> pwd
+	> cd ..
+	> ls
+	> git status
+	> git commit -m "Moving index.html file to web folder"
+	> clear
+
+14. Ignoring files
+	> notepad application.log (add some contents here)
+	> ls
+	> git status
+	> notepad .gitignore  (add *.log as content)
+	> git status
+	> ls -a
+	> git add .gitignore
+	> git commit "adding ignore files"
+	
+15. Setting up SSH authentication
+	> pwd (to check whether .ssh folder is available or not)
+	> mkdir .ssh
+	> cd .ssh
+	> pwd
+	> ssh-keygen -t rsa -C "dailycodebread@gmail.com"
+	> ls -l
+	> ssh -T git@github.com (msg: you've successfully authenticated) 
+	 - Above command used to connect to github using ssh protocol
+
+16. Collaborating with remote
+
+
